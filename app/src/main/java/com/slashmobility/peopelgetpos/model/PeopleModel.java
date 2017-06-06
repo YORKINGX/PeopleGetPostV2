@@ -8,54 +8,45 @@ public class PeopleModel {
 
 
     String certificate;
-    String lastname;
-    int dni;
-    String birthdate;
+    String apellido;
+    int cedula;
+    String fecha_nacimiento;
     int id;
-    String name;
+    String nombre;
 
-    public PeopleModel(String certificate, String lastname, int dni, String birthdate, int id, String name) {
-        this.certificate = certificate;
-        this.lastname = lastname;
-        this.dni = dni;
-        this.birthdate = birthdate;
+    public PeopleModel(String certificate, String apellido, int cedula, String fecha_nacimiento, int id, String nombre) {
+        this.apellido = apellido;
+        this.cedula = cedula;
+        this.fecha_nacimiento = fecha_nacimiento;
         this.id = id;
-        this.name = name;
+        this.nombre = nombre;
     }
 
     public PeopleModel() {
     }
 
-    public String getCertificate() {
-        return certificate;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setCertificate(String certificate) {
-        this.certificate = certificate;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public String getLastname() {
-        return lastname;
+    public int getCedula() {
+        return cedula;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
     }
 
-    public int getDni() {
-        return dni;
+    public String getFecha_nacimiento() {
+        return fecha_nacimiento;
     }
 
-    public void setDni(int dni) {
-        this.dni = dni;
-    }
-
-    public String getBirthdate() {
-        return birthdate;
-    }
-
-    public void setBirthdate(String birthdate) {
-        this.birthdate = birthdate;
+    public void setFecha_nacimiento(String fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
     }
 
     public int getId() {
@@ -67,10 +58,10 @@ public class PeopleModel {
     }
 
     public String getName() {
-        return name;
+        return nombre;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.nombre = name;
     }
 }

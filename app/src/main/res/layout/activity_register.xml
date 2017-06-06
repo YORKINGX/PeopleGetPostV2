@@ -88,7 +88,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textLasName" />
 
     <Button
-        android:id="@+id/buttonDone"
+        android:id="@+id/btnDone"
         android:layout_width="@dimen/width_btn_register"
         android:layout_height="48dp"
         android:layout_marginBottom="29dp"
@@ -99,7 +99,7 @@
         app:layout_constraintRight_toLeftOf="@+id/guideline3" />
 
     <Button
-        android:id="@+id/buttonCancel"
+        android:id="@+id/btnCancel"
         android:layout_width="@dimen/width_btn_register"
         android:layout_height="48dp"
         android:layout_marginBottom="29dp"

@@ -3,8 +3,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.slashmobility.peopelgetpos.R;
 import com.slashmobility.peopelgetpos.adapters.PeopleAdapter;
@@ -14,6 +17,9 @@ import com.slashmobility.peopelgetpos.service.callack.CallBackGetPeople;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
+import butterknife.BindView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,18 +37,31 @@ public class MainActivity extends AppCompatActivity {
         view_reciler.setLayoutManager(my_lienarlayout);
 
         ServiceManager.getPeople(new CallBackGetPeople() {
-            @Override
-            public void onSuccess(JsonObject ListPeople) {
+          @Override
+           public void onSuccess(JsonObject ListPeople) {
+              ArrayList<PeopleModel> arraypeopleModels = new ArrayList<PeopleModel>();
+              JsonObject jsonObject = ListPeople;
+              Gson gson = new Gson();
+              for (Map.Entry<String,JsonElement> entry : jsonObject.entrySet()){
+                   PeopleModel peopleModel = new PeopleModel();
+                   peopleModel = gson.fromJson(entry.getValue(), PeopleModel.class);
+                  arraypeopleModels.add(peopleModel);
 
+              }
+              PeopleAdapter mAdapterPeople = new PeopleAdapter(getApplicationContext(),arraypeopleModels);
+              view_reciler.setAdapter(mAdapterPeople);
+          }
 
-            }
-
-            @Override
+           @Override
             public void onError(String msgError, int indError) {
 
-                Toast.makeText(MainActivity.this,msgError,Toast.LENGTH_LONG).show();
-            }
-        });
+               Toast.makeText(MainActivity.this,msgError,Toast.LENGTH_LONG).show();
+
+             }
+         });
+
+
+
 
     /*   ServiceManager.getPeople(new CallBackGetPeople() {
            @Override

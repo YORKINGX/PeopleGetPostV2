@@ -11,6 +11,7 @@ import com.slashmobility.peopelgetpos.R;
 import com.slashmobility.peopelgetpos.model.PeopleModel;
 
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,9 +25,9 @@ import butterknife.ButterKnife;
 public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PersonAvilableViewHolder> {
 
     Context mContext;
-    List<PeopleModel> peopleModelArrayList;
+    ArrayList<PeopleModel> peopleModelArrayList;
 
-    public PeopleAdapter(Context mContext, List<PeopleModel> peopleModelArrayList) {
+    public PeopleAdapter(Context mContext, ArrayList<PeopleModel> peopleModelArrayList) {
         this.mContext = mContext;
         this.peopleModelArrayList = peopleModelArrayList;
     }
@@ -45,10 +46,10 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.PersonAvil
     @Override
     public void onBindViewHolder(PersonAvilableViewHolder holder, final int position) {
         holder.idPeople.setText(String.valueOf(peopleModelArrayList.get(position).getId()));
-        holder.iduserdni.setText(String.valueOf(peopleModelArrayList.get(position).getDni()));
+        holder.iduserdni.setText(String.valueOf(peopleModelArrayList.get(position).getCedula()));
         holder.idName.setText(peopleModelArrayList.get(position).getName());
-        holder.idlastname.setText(peopleModelArrayList.get(position).getLastname());
-        holder.idDirthdate.setText(peopleModelArrayList.get(position).getBirthdate());
+        holder.idlastname.setText(peopleModelArrayList.get(position).getApellido());
+        holder.idDirthdate.setText(peopleModelArrayList.get(position).getFecha_nacimiento());
     //    Picasso.with(mContext).load("https://logodownload.org/wp-content/uploads/2015/04/Whatsapp-logo-vetor-2.png").into(holder.midImage);
       /*  holder.midImage.setOnClickListener(new View.OnClickListener() {
             @Override
