@@ -21,7 +21,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     RecyclerView view_reciler;
     ArrayList<PeopleModel> arrayListPeople = new ArrayList<PeopleModel>();
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         view_reciler =(RecyclerView) findViewById(R.id.people_recycler);
+
         LinearLayoutManager my_lienarlayout = new LinearLayoutManager(this);
         my_lienarlayout.setOrientation(LinearLayoutManager.VERTICAL);
         view_reciler.setLayoutManager(my_lienarlayout);

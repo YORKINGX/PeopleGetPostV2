@@ -1,5 +1,7 @@
 package com.slashmobility.peopelgetpos.adapters;
 
+
+import android.support.v7.widget.RecyclerView;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -57,20 +59,32 @@ public class PeopleAdapter  extends RecyclerView.Adapter<PeopleAdapter.PeopleAvi
 
     public class PeopleAvilableViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.viewId)TextView viewId;
+        /*@BindView(R.id.viewId)TextView viewId;
         @BindView(R.id.viewCi) TextView viewCi;
         @BindView(R.id.viewname) TextView viewname;
         @BindView(R.id.viewDate) TextView viewDate;
-        @BindView(R.id.viewLn) TextView viewLn;
+        @BindView(R.id.viewLn) TextView viewLn;*/
+
+        TextView viewId;
+        TextView viewCi;
+        TextView viewname;
+        TextView viewDate;
+        TextView viewLn;
 
 
 
         View itemView;
         public PeopleAvilableViewHolder(View itemView) {
 
-            super(itemView);
-            ButterKnife.bind(this, itemView);
-            this.itemView = itemView;
+           super(itemView);
+           // ButterKnife.bind(this, itemView);
+           this.itemView = itemView;
+            viewId =(TextView) itemView.findViewById(R.id.viewId);
+            viewCi =(TextView) itemView.findViewById(R.id.viewCi);
+            viewname =(TextView) itemView.findViewById(R.id.viewname);
+            viewDate =(TextView) itemView.findViewById(R.id.viewDate);
+            viewLn =(TextView) itemView.findViewById(R.id.viewLn);
+
         }
     }
 
