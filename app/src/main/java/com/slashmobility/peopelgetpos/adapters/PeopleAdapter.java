@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.slashmobility.peopelgetpos.R;
 import com.slashmobility.peopelgetpos.model.PeopleModel;
@@ -42,11 +43,13 @@ public class PeopleAdapter  extends RecyclerView.Adapter<PeopleAdapter.PeopleAvi
 
     @Override
     public void onBindViewHolder(PeopleAvilableViewHolder holder, int position) {
-        holder.idPeople.setText(String.valueOf(peopleModelArrayList.get(position).getId()));
-        holder.iduserdni.setText(String.valueOf(peopleModelArrayList.get(position).getCedula()));
-        holder.idName.setText(peopleModelArrayList.get(position).getName());
-        holder.idlastname.setText(peopleModelArrayList.get(position).getApellido());
-        holder.idDirthdate.setText(peopleModelArrayList.get(position).getFecha_nacimiento());
+
+
+        holder.viewId.setText(String.valueOf(peopleModelArrayList.get(position).getId()));
+        holder.viewCi.setText(String.valueOf(peopleModelArrayList.get(position).getCedula()));
+        holder.viewname.setText(peopleModelArrayList.get(position).getName());
+        holder.viewLn.setText(peopleModelArrayList.get(position).getApellido());
+        holder.viewDate.setText(peopleModelArrayList.get(position).getFecha_nacimiento());
     }
 
     @Override
@@ -56,11 +59,11 @@ public class PeopleAdapter  extends RecyclerView.Adapter<PeopleAdapter.PeopleAvi
 
     public class PeopleAvilableViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.id_id)EditText idPeople;
-        @BindView(R.id.iddni) EditText iduserdni;
-        @BindView(R.id.idbirthdate) EditText idDirthdate;
-        @BindView(R.id.idtextname) EditText idName;
-        @BindView(R.id.idtextapellido) EditText idlastname;
+        @BindView(R.id.viewId)TextView viewId;
+        @BindView(R.id.viewCi) TextView viewCi;
+        @BindView(R.id.viewname) TextView viewname;
+        @BindView(R.id.viewDate) TextView viewDate;
+        @BindView(R.id.viewLn) TextView viewLn;
 
 
 

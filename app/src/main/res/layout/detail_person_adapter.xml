@@ -14,7 +14,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/id_id"
+                android:id="@+id/viewId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_xsmall"
@@ -28,20 +28,20 @@
                 android:layout_marginLeft="@dimen/margin_xsmall"
                 android:background="@color/light_blue"
 
-                android:layout_below="@+id/id_id"
+                android:layout_below="@+id/viewId"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/idtextname"
+                    android:id="@+id/viewname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/id_id"
+                    android:layout_below="@+id/viewId"
 
-                     android:text="Jorge"
+                    android:text="Jorge"
                     android:textSize="16sp"
                     android:textStyle="bold" />
                 <TextView
-                    android:id="@+id/idtextapellido"
+                    android:id="@+id/viewLn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="@dimen/margin_small"
@@ -53,19 +53,20 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/iddni"
-            android:layout_marginStart="@dimen/margin_xsmall"
+            android:id="@+id/viewCi"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginBottom="5dp"
+            android:layout_marginStart="@dimen/margin_xsmall"
             android:layout_marginTop="5dp"
             android:text="16.918.248"
             android:textSize="16sp" />
+
         <TextView
-            android:id="@+id/idbirthdate"
-            android:layout_marginStart="@dimen/margin_xsmall"
+            android:id="@+id/viewDate"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin_xsmall"
 
             android:text="31/07/1970"
             android:textSize="16sp" />

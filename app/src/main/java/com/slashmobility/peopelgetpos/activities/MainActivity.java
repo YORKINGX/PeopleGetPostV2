@@ -24,6 +24,7 @@ import butterknife.BindView;
 public class MainActivity extends AppCompatActivity {
 
     RecyclerView view_reciler;
+    ArrayList<PeopleModel> arrayListPeople = new ArrayList<PeopleModel>();
 
 
     @Override
@@ -39,16 +40,16 @@ public class MainActivity extends AppCompatActivity {
         ServiceManager.getPeople(new CallBackGetPeople() {
           @Override
            public void onSuccess(JsonObject ListPeople) {
-              ArrayList<PeopleModel> arraypeopleModels = new ArrayList<PeopleModel>();
+
               JsonObject jsonObject = ListPeople;
               Gson gson = new Gson();
               for (Map.Entry<String,JsonElement> entry : jsonObject.entrySet()){
-                   PeopleModel peopleModel = new PeopleModel();
-                   peopleModel = gson.fromJson(entry.getValue(), PeopleModel.class);
-                  arraypeopleModels.add(peopleModel);
+                  PeopleModel peopleModel = new PeopleModel();
+                  peopleModel = gson.fromJson(entry.getValue(), PeopleModel.class);
+                  arrayListPeople.add(peopleModel);
 
               }
-              PeopleAdapter mAdapterPeople = new PeopleAdapter(getApplicationContext(),arraypeopleModels);
+              PeopleAdapter mAdapterPeople = new PeopleAdapter(getApplicationContext(),arrayListPeople);
               view_reciler.setAdapter(mAdapterPeople);
           }
 
