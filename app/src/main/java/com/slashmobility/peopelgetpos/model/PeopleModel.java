@@ -7,14 +7,14 @@ package com.slashmobility.peopelgetpos.model;
 public class PeopleModel {
 
 
-    String certificate;
+
     String apellido;
     int cedula;
     String fecha_nacimiento;
     int id;
     String nombre;
 
-    public PeopleModel(String certificate, String apellido, int cedula, String fecha_nacimiento, int id, String nombre) {
+    public PeopleModel(String apellido, int cedula, String fecha_nacimiento, int id, String nombre) {
         this.apellido = apellido;
         this.cedula = cedula;
         this.fecha_nacimiento = fecha_nacimiento;
