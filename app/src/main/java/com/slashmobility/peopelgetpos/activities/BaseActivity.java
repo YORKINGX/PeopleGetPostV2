@@ -102,6 +102,14 @@ public class BaseActivity extends AppCompatActivity {
             this.startActivity(myIntent);
         }
 
+    public void openActivity(Class<?> calledActivity,Bundle bundle) {
+        Intent myIntent = new Intent(this, calledActivity);
+        Bundle datos = this.getIntent().getExtras();
+       //bundle.get("Key");
+        this.startActivity(myIntent);
+    }
+
+
         public void changeColorBarNotification(int color){
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 Window window = this.getWindow();

@@ -1,6 +1,7 @@
 package com.slashmobility.peopelgetpos.adapters;
 
 
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.slashmobility.peopelgetpos.R;
+import com.slashmobility.peopelgetpos.activities.MainActivity;
+import com.slashmobility.peopelgetpos.activities.People_Data_Activity;
 import com.slashmobility.peopelgetpos.model.PeopleModel;
 
 
@@ -44,12 +47,26 @@ public class PeopleAdapter  extends RecyclerView.Adapter<PeopleAdapter.PeopleAvi
     }
 
     @Override
-    public void onBindViewHolder(PeopleAvilableViewHolder holder, int position) {
+    public void onBindViewHolder(PeopleAvilableViewHolder holder, final int position) {
         holder.viewId.setText(String.valueOf(peopleModelArrayList.get(position).getId()));
         holder.viewCi.setText(String.valueOf(peopleModelArrayList.get(position).getCedula()));
         holder.viewname.setText(peopleModelArrayList.get(position).getName());
         holder.viewLn.setText(peopleModelArrayList.get(position).getApellido());
         holder.viewDate.setText(peopleModelArrayList.get(position).getFecha_nacimiento());
+
+        holder.viewname.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle =new Bundle();
+                bundle.putString("viewId",String.valueOf(peopleModelArrayList.get(position).getId()));
+                bundle.putString("viewCi",String.valueOf(peopleModelArrayList.get(position).getCedula()));
+                bundle.putString("viewName",peopleModelArrayList.get(position).getName());
+                bundle.putString("viewLn",peopleModelArrayList.get(position).getApellido());
+                bundle.putString("vieDate",peopleModelArrayList.get(position).getFecha_nacimiento());
+
+                ((MainActivity) mContext).openActivity(People_Data_Activity.class,bundle);
+            }
+        });
     }
 
     @Override
