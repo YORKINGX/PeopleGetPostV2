@@ -43,8 +43,6 @@ public class PeopleAdapter  extends RecyclerView.Adapter<PeopleAdapter.PeopleAvi
 
     @Override
     public void onBindViewHolder(PeopleAvilableViewHolder holder, int position) {
-
-
         holder.viewId.setText(String.valueOf(peopleModelArrayList.get(position).getId()));
         holder.viewCi.setText(String.valueOf(peopleModelArrayList.get(position).getCedula()));
         holder.viewname.setText(peopleModelArrayList.get(position).getName());
