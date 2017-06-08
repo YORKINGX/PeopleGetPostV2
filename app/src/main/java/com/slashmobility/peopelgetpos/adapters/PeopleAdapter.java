@@ -58,8 +58,8 @@ public class PeopleAdapter  extends RecyclerView.Adapter<PeopleAdapter.PeopleAvi
             @Override
             public void onClick(View v) {
                 Bundle bundle =new Bundle();
-                bundle.putString("viewId",String.valueOf(peopleModelArrayList.get(position).getId()));
-                bundle.putString("viewCi",String.valueOf(peopleModelArrayList.get(position).getCedula()));
+             //   bundle.putString("viewId",String.valueOf(peopleModelArrayList.get(position).getId()));
+             //   bundle.putString("viewCi",String.valueOf(peopleModelArrayList.get(position).getCedula()));
                 bundle.putString("viewName",peopleModelArrayList.get(position).getName());
                 bundle.putString("viewLn",peopleModelArrayList.get(position).getApellido());
                 bundle.putString("vieDate",peopleModelArrayList.get(position).getFecha_nacimiento());

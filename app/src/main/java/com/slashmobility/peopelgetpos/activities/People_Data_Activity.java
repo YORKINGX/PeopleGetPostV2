@@ -25,8 +25,8 @@ public class People_Data_Activity extends AppCompatActivity {
         setContentView(activity_people_data);
         String id;
         Bundle datos = this.getIntent().getExtras();
-
-      Intent intent = getIntent();
+        viewname = (TextView)findViewById(R.id.viewName);
+        viewname.setText(datos.getString("viewName"));
 
      /*   if(datos!=null){
 
