@@ -104,8 +104,7 @@ public class BaseActivity extends AppCompatActivity {
 
     public void openActivity(Class<?> calledActivity,Bundle bundle) {
         Intent myIntent = new Intent(this, calledActivity);
-
-       //bundle.get("Key");
+        myIntent.putExtras(bundle);
         this.startActivity(myIntent);
     }
 

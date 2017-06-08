@@ -50,7 +50,7 @@ public class MainActivity extends BaseActivity {
                   arrayListPeople.add(peopleModel);
 
               }
-              PeopleAdapter mAdapterPeople = new PeopleAdapter(getApplicationContext(),arrayListPeople);
+              PeopleAdapter mAdapterPeople = new PeopleAdapter(MainActivity.this,arrayListPeople);
               view_reciler.setAdapter(mAdapterPeople);
           }
 
