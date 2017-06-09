@@ -13,22 +13,24 @@ import static com.slashmobility.peopelgetpos.R.layout.activity_people_data;
 
 public class People_Data_Activity extends AppCompatActivity {
 
-    TextView viewId;
-    TextView viewCi;
-    TextView viewname;
-    TextView viewDate;
-    TextView viewLn;
+    TextView mViewId;
+    TextView mViewCi;
+    TextView mViewName;
+    TextView mViewDate;
+    TextView mViewLn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(activity_people_data);
-        String id;
-        Bundle datos = this.getIntent().getExtras();
-        viewname = (TextView)findViewById(R.id.viewName);
-        viewname.setText(datos.getString("viewName"));
 
-     /*   if(datos!=null){
+        Bundle datos = getIntent().getExtras();
+        mViewId = (TextView)findViewById(R.id.viewId);
+        mViewId.setText(datos.getString("viewIdKey"));
+        mViewName = (TextView)findViewById(R.id.viewName);
+        mViewName.setText(datos.getString("viewNameKey"));
+
+     /*   if(datos!=null){ viewNameKey
 
             viewId = (TextView)findViewById(R.id.viewId);
             viewname = (TextView)findViewById(R.id.viewName);
