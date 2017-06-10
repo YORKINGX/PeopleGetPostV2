@@ -15,7 +15,7 @@ public class People_Data_Activity extends AppCompatActivity {
 
     TextView viewId;
     TextView viewCi;
-    TextView viewname;
+    TextView viewName;
     TextView viewDate;
     TextView viewLn;
 
@@ -23,10 +23,22 @@ public class People_Data_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(activity_people_data);
-        String id;
+
+
         Bundle datos = this.getIntent().getExtras();
-        viewname = (TextView)findViewById(R.id.viewName);
-        viewname.setText(datos.getString("viewName"));
+
+        viewName = (TextView)findViewById(R.id.idViewName);
+        viewId = (TextView)findViewById(R.id.idViewId);
+        viewLn = (TextView)findViewById(R.id.idViewLastName);
+        viewCi = (TextView)findViewById(R.id.idViewDni);
+        viewDate = (TextView)findViewById(R.id.idViewDate);
+
+        viewName.setText(datos.getString("mViewName"));
+        viewId.setText(datos.getString("mViewId"));
+        viewLn.setText(datos.getString("mViewLn"));
+        viewCi.setText(datos.getString("mViewCi"));
+        viewDate.setText(datos.getString("mViewDate"));
+
 
      /*   if(datos!=null){
 

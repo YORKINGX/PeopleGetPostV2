@@ -103,7 +103,7 @@ public class BaseActivity extends AppCompatActivity {
         }
 
     public void openActivity(Class<?> calledActivity,Bundle bundle) {
-        Intent myIntent = new Intent(this, calledActivity);
+        Intent myIntent = new Intent(this,calledActivity);
         myIntent.putExtras(bundle);
         this.startActivity(myIntent);
     }
