@@ -4,11 +4,9 @@ package com.slashmobility.peopelgetpos.adapters;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.slashmobility.peopelgetpos.R;
@@ -18,9 +16,6 @@ import com.slashmobility.peopelgetpos.model.PeopleModel;
 
 
 import java.util.ArrayList;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Created by Administrador on 03/06/2017.
@@ -96,7 +91,7 @@ public class PeopleAdapter  extends RecyclerView.Adapter<PeopleAdapter.PeopleAvi
            super(itemView);
            // ButterKnife.bind(this, itemView);
            this.itemView = itemView;
-            viewId =(TextView) itemView.findViewById(R.id.viewId);
+            viewId =(TextView) itemView.findViewById(R.id.idViewId);
             viewCi =(TextView) itemView.findViewById(R.id.viewCi);
             viewname =(TextView) itemView.findViewById(R.id.viewname);
             viewDate =(TextView) itemView.findViewById(R.id.viewDate);
