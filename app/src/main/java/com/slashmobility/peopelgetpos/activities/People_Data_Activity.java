@@ -1,11 +1,8 @@
 package com.slashmobility.peopelgetpos.activities;
 
-import android.content.Context;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.slashmobility.peopelgetpos.R;
 
@@ -13,24 +10,34 @@ import static com.slashmobility.peopelgetpos.R.layout.activity_people_data;
 
 public class People_Data_Activity extends AppCompatActivity {
 
-    TextView mViewId;
-    TextView mViewCi;
-    TextView mViewName;
-    TextView mViewDate;
-    TextView mViewLn;
+    TextView viewId;
+    TextView viewCi;
+    TextView viewName;
+    TextView viewDate;
+    TextView viewLn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(activity_people_data);
 
-        Bundle datos = getIntent().getExtras();
-        mViewId = (TextView)findViewById(R.id.viewId);
-        mViewId.setText(datos.getString("viewIdKey"));
-        mViewName = (TextView)findViewById(R.id.viewName);
-        mViewName.setText(datos.getString("viewNameKey"));
 
-     /*   if(datos!=null){ viewNameKey
+        Bundle datos = this.getIntent().getExtras();
+
+        viewName = (TextView)findViewById(R.id.idViewName);
+        viewId = (TextView)findViewById(R.id.idViewId);
+        viewLn = (TextView)findViewById(R.id.idViewLastName);
+        viewCi = (TextView)findViewById(R.id.idViewDni);
+        viewDate = (TextView)findViewById(R.id.idViewDate);
+
+        viewName.setText(datos.getString("mViewName"));
+        viewId.setText(datos.getString("mViewId"));
+        viewLn.setText(datos.getString("mViewLn"));
+        viewCi.setText(datos.getString("mViewCi"));
+        viewDate.setText(datos.getString("mViewDate"));
+
+
+     /*   if(datos!=null){
 
             viewId = (TextView)findViewById(R.id.viewId);
             viewname = (TextView)findViewById(R.id.viewName);

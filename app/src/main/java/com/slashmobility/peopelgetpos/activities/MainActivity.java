@@ -3,6 +3,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -25,13 +26,13 @@ public class MainActivity extends BaseActivity {
 
     RecyclerView view_reciler;
     ArrayList<PeopleModel> arrayListPeople = new ArrayList<PeopleModel>();
-
+     private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        toolbar = (Toolbar) findViewById(R.id.t)
         view_reciler =(RecyclerView) findViewById(R.id.people_recycler);
 
         LinearLayoutManager my_lienarlayout = new LinearLayoutManager(this);
