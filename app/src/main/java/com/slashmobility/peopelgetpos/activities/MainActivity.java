@@ -101,8 +101,8 @@ public class MainActivity extends BaseActivity {
 
     public void ejecutar_class_inf(View v){
 
-      //  Intent intenInf = new Intent(this,Inflate_Menu.class);
-      //  startActivity(intenInf);
+         Intent intenInf = new Intent(this,RegisterActivity.class);
+         startActivity(intenInf);
     }
 
     @Override
@@ -110,19 +110,19 @@ public class MainActivity extends BaseActivity {
 
         int opcionMenu = option_item.getItemId();
 
-      /*  if (opcionMenu == R.id.tool_bar)
+        if (opcionMenu == R.id.idInfo)
         {
             return  true;
 
         }
 
-        if(opcionMenu == R.id.){
+        if(opcionMenu == R.id.idConf){
 
-           // ejecutar_class_inf(null);
+           ejecutar_class_inf(null);
             return true;
         }
 
-        return super.onOptionsItemSelected(option_item);*/
-        return true;
+        return super.onOptionsItemSelected(option_item);
+
     }
 }
